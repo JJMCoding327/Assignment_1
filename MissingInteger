@@ -1,0 +1,9 @@
+def solution(A):
+  positive_numbers = set()
+  for x in A:
+    if x > 0:
+      positive_numbers.add(x)
+  smallest_positve = 1
+  while smallest_positve in positive_numbers:
+    smallest_positve = smallest_positve + 1
+  return smallest_positve
