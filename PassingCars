@@ -1,0 +1,12 @@
+def solution(A):
+  count_east = 0 # cars traveling east seen so far
+  passing_cars = 0 # passing car pairs
+  max_limit = 100000 # limit 
+  for  x in A:
+    if x == 0: # car found driving east
+      count_east = count_east + 1
+    elif x == 1: # car found going west, passes all east-going cars
+      passing_cars = passing_cars + count_east
+      if passing_cars > max_limit: #can't go over limit#
+        return  -1
+  return passing_cars
