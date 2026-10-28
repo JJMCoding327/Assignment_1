@@ -1,0 +1,11 @@
+def solution(X, A):
+  # A set to keep track of unique leaf positions seen so far
+  covered = set()
+  # Iterate through each second K and the leaf position A[K]
+  for time, pos in enumerate(A):
+    covered.add(pos)
+    # If we have collected all unique positions from 1 to X
+    if len(covered) == X:
+      return time
+  # If the loop finishes and positions 1 to X are not all covered
+  return -1
