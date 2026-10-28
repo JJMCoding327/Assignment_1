@@ -1,0 +1,12 @@
+from ast import mod
+import math
+def solution(A,B,K):
+  multiples_up_to_B = math.floor(B/K)
+  if A > 0:
+    multiples_below_A = math.floor((A-1)/K)
+  else:
+    multiples_below_A = -1
+  count = multiples_up_to_B - math.floor(A/K)
+  if A % K == 0:
+    count = count + 1
+  return count
