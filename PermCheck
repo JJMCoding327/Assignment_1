@@ -1,0 +1,10 @@
+def solution(A):
+  N = len(A) # saving time on writing len(A)
+  seen_elements = set() # counting every element iterated over
+  for element in A: # iterating over every element in A
+    if (element < 1) or element > N: # negative numbers and those longer than len
+      return 0
+    elif element in seen_elements: # any permutations returns 0
+      return 0
+    seen_elements.add(element) #adding element to take note
+  return 1 #if there are no two same elements, than return 1
