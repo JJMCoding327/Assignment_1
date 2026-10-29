@@ -1,9 +1,9 @@
 def solution(A):
-  positive_numbers = set() #create empty hashset to put all postive numbers into
-  for x in A:
-    if x > 0:
-      positive_numbers.add(x) #adding positive numbers in A to hashset
-  smallest_positve = 1 #setting first smallest possible positive
-  while smallest_positve in positive_numbers:
-    smallest_positve = smallest_positve + 1 #incrementing until reaching just after the largest positve in A
-  return smallest_positve #returning our answer
+    # Convert array to a set for O(1) lookups
+    num_set = set(A)
+    # The smallest missing positive integer can at most be len(A) + 1
+    # Check each integer starting from 1 upwards
+    missing = 1
+    while missing in num_set:
+        missing += 1   
+    return missing
