@@ -1,5 +1,5 @@
 def solution(A):
-    # Convert array to a set for O(1) lookups
+    # Convert array to get rid of duplicates
     num_set = set(A)
     # The smallest missing positive integer can at most be len(A) + 1
     # Check each integer starting from 1 upwards
